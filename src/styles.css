@@ -19,17 +19,29 @@ h1{
   
 }
 .container {
+  margin: 20px;
   overflow: auto;
   padding: 100;
   background-color: rgba(190, 223, 238, 0.582);
   border-radius: 5px;
 }
-
+#randomButton{
+  background-color: rgb(128, 63, 167);
+  border-color: rgb(128, 63, 167);
+}
 li {
   list-style: none;
+  margin: 10px;
 }
 li:hover{
-  color: orange;
+  color: #8e51f1;;
+  text-decoration-line: underline;
+  text-decoration-color: #8e51f1;;;;
+}
+li:first-letter {
+  color: #8e51f1;;;
+  font-family: Georgia;
+  initial-letter: 2;
 }
 #userForm {
   margin-left: 50px;
@@ -53,6 +65,7 @@ li:hover{
 
 #details {
 display: none;
+padding: 10px;
 background-color:  rgb(193, 212, 252);
 border-radius: 5px;
 }

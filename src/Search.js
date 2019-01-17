@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import { API_KEY } from '../.env';
 export class SearchMovie {
   constructor(runtime, genre) {
@@ -37,6 +36,22 @@ export class SearchMovie {
       request.open("GET", url, true);
       request.send();
     });
+  }
+  GetRandom() {
+    return new Promise((resolve, reject) => {
+      let request = new XMLHttpRequest();
+      let pgNumber = Math.floor(Math.random() * 30);
+      let url = `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${pgNumber}&timezone=America%2FNew_York&with_genres=${this.genre}&with_runtime.lte=${this.runtime}&include_null_first_air_dates=false`;
+      request.onload = function () {
+        if (this.status === 200) {
+          resolve(request.response);
+        } else {
+          reject(Error(request.statusText));
+        }
+      }
+      request.open("GET", url, true);
+      request.send();
+    })
   }
 
 }
