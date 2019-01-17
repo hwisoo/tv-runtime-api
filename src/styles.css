@@ -1,6 +1,9 @@
 body {
   background-color: rgb(145, 208, 238)
 }
+h1{
+  float:left;
+}
 img{
   float: right;
 }

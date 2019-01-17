@@ -10,14 +10,15 @@
 
 <body>
   <div class="container">
-    <img id="tvicon" src="" alt="">
-
-    <h1>The Movie DB - TV Runtime Tracker</h1>
+    
+    <div class="header">
+      <h1>The Movie DB - TV Runtime Tracker</h1><img id="tvicon" src="" alt="">
+    </div>
 
     <form id="userForm">
-      <label for="minutes">Show TV series with a maximum (episode) runtime of</label>
+      <label for="minutes">Show TV series with a maximum (episode) runtime of: </label>
       <input id="minutes" type="text"><br>
-      <label for="genre">Select a Genre</label>
+      <label for="genre">Select a Genre: </label>
       <select id="genre">
         <option value="10759">Action and Adventure</option>
         <option value="16">Animation</option>
@@ -42,6 +43,7 @@
 
       <ul id="name" class="col"></ul>
       <ul id="id" class="col"></ul>
+      <p id="seasons"></p>
     </div>
     <p id="errors"></p>
 
