@@ -1,6 +1,5 @@
 import $ from 'jquery';
-
-
+import { API_KEY } from '../.env';
 export class SearchMovie {
   constructor(runtime, genre) {
     this.runtime = runtime;
@@ -11,7 +10,7 @@ export class SearchMovie {
     let that = this;
     return new Promise(function (resolve, reject) {
       let request = new XMLHttpRequest();
-      let url = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=${that.genre}&with_runtime.lte=${that.runtime}&include_null_first_air_dates=false`;
+      let url = `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=${that.genre}&with_runtime.lte=${that.runtime}&include_null_first_air_dates=false`;
       request.onload = function () {
         if (this.status === 200) {
           resolve(request.response);
@@ -23,6 +22,10 @@ export class SearchMovie {
       request.send();
     });
   }
+
+  // GetDetails(id) {
+
+  // }
 }
   //   })
   //   $.get(`https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=${this.genre}&with_runtime.lte=${this.runtime}&include_null_first_air_dates=false`)

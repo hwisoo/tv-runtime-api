@@ -1,0 +1,12 @@
+body {
+  background-color: rgb(145, 208, 238)
+}
+img{
+  float: right;
+}
+.container {
+  padding: 100px;
+  margin-top: 50px;
+  background-color: rgba(190, 223, 238, 0.582);
+  border-radius: 5px;
+}
