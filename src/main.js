@@ -2,7 +2,6 @@ import { SearchMovie } from './Search.js';
 import $ from 'jquery';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-const api_key = "d27ab20685d4950559e1bdfa21e0f209";
 
 $(document).ready(function () {
 
@@ -17,7 +16,7 @@ $(document).ready(function () {
     let promise = newSearch.GetNameList();
 
     promise.then(function (response) {
-      let body = JSON.parse(response);
+      letbody = JSON.parse(response);
       for (let i = 0; i < body.results.length; i++) {
         $("#name").append("<li>" + body.results[i].name + '</li>');
         $("#id").append("<li class='id'>" + body.results[i].id + '</li>');

@@ -1,5 +1,5 @@
 import $ from 'jquery';
-const api_key = "d27ab20685d4950559e1bdfa21e0f209";
+
 
 export class SearchMovie {
   constructor(runtime, genre) {
