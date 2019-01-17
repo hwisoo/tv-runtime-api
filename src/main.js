@@ -11,6 +11,8 @@ $(document).ready(function () {
 
   $("#userForm").submit(function (event) {
     event.preventDefault();
+    $("#details").empty();
+    $("#details").show();
     $("#name").empty();
     $("#id").empty();
 
@@ -28,6 +30,7 @@ $(document).ready(function () {
         $("#details").empty();
         $("#details").show();
         let id = this.getAttribute("class");
+
         let detailsPromise = newSearch.GetDetails(id);
         detailsPromise.then(function (response) {
           let body = JSON.parse(response);
