@@ -27,12 +27,12 @@ $(document).ready(function () {
       }
       $("li").click(function (event) {
         $("#details").empty();
-        $("#details").show();
         let id = this.getAttribute("class");
 
         let detailsPromise = newSearch.GetDetails(id);
         detailsPromise.then(function (response) {
           let body = JSON.parse(response);
+
 
 
           $("#details").append(`<img class='img-thumbnail' src='https://image.tmdb.org/t/p/original/${body.backdrop_path}' alt = 'pic'>`);
@@ -41,7 +41,7 @@ $(document).ready(function () {
           $("#details").append(`<p>Number of episodes: ${body.number_of_episodes}</p>`);
           $("#details").append(`<p id='description'>Description: ${body.overview}</p>`);
           $("#details").append(`<p>Episode runtime: ${body.episode_run_time[0]}</p>`);
-
+          $("#details").fadeIn();
 
         })
 
@@ -68,7 +68,7 @@ $(document).ready(function () {
       }
       $("li").click(function (event) {
         $("#details").empty();
-        $("#details").show();
+
         let id = this.getAttribute("class");
 
         let detailsPromise = newSearch.GetDetails(id);
@@ -83,7 +83,7 @@ $(document).ready(function () {
           $("#details").append(`<p id='description'>Description: ${body.overview}</p>`);
           $("#details").append(`<p>Episode runtime: ${body.episode_run_time[0]}</p>`);
 
-
+          $("#details").fadeIn();
         })
 
       })

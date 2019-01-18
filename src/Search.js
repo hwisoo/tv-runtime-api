@@ -9,7 +9,12 @@ export class SearchMovie {
   GetNameList() {
     return new Promise((resolve, reject) => {
       let request = new XMLHttpRequest();
-      let url = `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=${this.genre}&with_runtime.lte=${this.runtime}&include_null_first_air_dates=false`;
+      let url = "";
+      if (this.genre == 16) {
+        url = `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=${this.genre}&with_runtime.lte=${this.runtime}&include_null_first_air_dates=false`
+      } else {
+        url = `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=${this.genre}&with_runtime.lte=${this.runtime}&without_genres=16&include_null_first_air_dates=false`;
+      }
       request.onload = function () {
         if (this.status === 200) {
           resolve(request.response);
