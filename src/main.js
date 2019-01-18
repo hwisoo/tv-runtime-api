@@ -41,6 +41,8 @@ $(document).ready(function () {
           $("#details").append(`<p>Number of episodes: ${body.number_of_episodes}</p>`);
           $("#details").append(`<p id='description'>Description: ${body.overview}</p>`);
           $("#details").append(`<p>Episode runtime: ${body.episode_run_time[0]}</p>`);
+          $("#details").append(`<span>Stream on: ${body.networks[0].name}</span>`);
+
           $("#details").fadeIn();
 
         })
