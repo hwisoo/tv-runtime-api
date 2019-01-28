@@ -1,6 +1,6 @@
 # _TV Runtime API_
 
-#### _TV Runtime App using Javascript, Webpack, and TV Database APII, Jan 2019_
+#### _TV Runtime App using Javascript, Webpack, and TV Database API, Jan 2019_
 
 #### By _**James Cho**_
 
